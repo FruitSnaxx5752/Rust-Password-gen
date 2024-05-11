@@ -11,7 +11,7 @@ fn main(){
         vec!['1','2','3','4','5','6','7','8','9','0'];
     let special: Vec<char> =
         vec!['!','@','#','$','%','^','&','*','(',')','-','=','_','+','<',',','>','.','/',':','~',';','|','`'];
-    let mut pass_length:i8 = args::args();
+    let mut pass_length:u8 = args::args();
     let mut gen_password: Vec<char> = vec![];
     while pass_length > 0 {
         let random_selection: i8 = thread_rng().gen_range(1..5);

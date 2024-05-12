@@ -1,15 +1,18 @@
 use clap::Parser;
 
-#[derive(Parser, Debug)]
+#[derive(Parser, Debug, Default)]
 #[command(version, about, long_about)]
-pub struct Args{
+pub struct Length{
     ///Length of new password (Max length: 255)
-    #[arg(short= 'l',long = "length")]
+    #[arg(short= 'l',long = "length", default_value_t = 15)]
     length: u8,
 
 }
-pub fn args()-> u8{
-    let args: Args = Args::parse();
-    let len: u8 = args.length;
+pub fn length()-> u8{
+    let length: Length = Length::parse();
+    let mut len: u8 = length.length;
+    if len == 0{
+        len = 15;
+    }
     return len;
 }

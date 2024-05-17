@@ -16,7 +16,7 @@ pub struct Args{
     #[arg(short= 'N', long = "Numerical", default_value = "false")]
     numerical: bool,
     // Option for Special charecters
-    #[arg(short= 'S', long = "Specail", default_value = "false")]
+    #[arg(short= 'S', long = "Special", default_value = "false")]
     special: bool,
 }
 
